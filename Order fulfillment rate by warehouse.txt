@@ -13,8 +13,8 @@ SELECT
     THEN 'Fulfilled 21-60% of Orders'
     ELSE 'Fulfilled more than 60% of Orders'
   END AS fulfillment_summary
-FROM serene-bongo-242020.warehouse_orders.warehouse AS Warehouse
-LEFT JOIN serene-bongo-242020.warehouse_orders.orders AS Orders
+FROM serene-bongo-242020.warehouse_orders.warehouse AS Warehouse -- warehouse table from warehouse_orders database
+LEFT JOIN serene-bongo-242020.warehouse_orders.orders AS Orders -- left join with orders table from warehouse_orders database
 ON Orders.warehouse_id = Warehouse.warehouse_id
 GROUP BY
   Warehouse.warehouse_id,
